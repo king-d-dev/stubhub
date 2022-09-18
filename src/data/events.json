@@ -1,0 +1,67 @@
+{
+  "events": [
+    {
+      "id": 4422829,
+      "name": "Test data 1",
+      "artiste": "Justin Bieber",
+      "city": "Camden",
+      "price": 23
+    },
+    {
+      "id": 4422826,
+      "name": "Test data 2",
+      "artiste": "Mike Jackson",
+      "city": "Hartford",
+      "price": 20
+    },
+    {
+      "id": 150029205,
+      "name": "Test data 3",
+      "artiste": "Taylor Swift",
+      "city": "Bethel",
+      "price": 69
+    },
+    {
+      "id": 8621837,
+      "name": "Test data 4",
+      "artiste": "Selena Gomez",
+      "city": "Camden Palace",
+      "price": 30
+    },
+    {
+      "id": 8621843,
+      "name": "Test data 5",
+      "artiste": "Ariana Grande",
+      "city": "Hartford",
+      "price": 35
+    },
+    {
+      "id": 8621842,
+      "name": "Test data 6",
+      "artiste": "John legend",
+      "city": "Bethel",
+      "price": 69
+    },
+    {
+      "id": 10380132,
+      "name": "Test data 7",
+      "artiste": "Daddy Yankee",
+      "city": "Inglewood",
+      "price": 23
+    },
+    {
+      "id": 150100779,
+      "name": "Test data 8",
+      "artiste": "Chris Brown",
+      "city": "West Palm Beach",
+      "price": 19
+    },
+    {
+      "id": 150096789,
+      "name": "Test data 9",
+      "artiste": "Lil Baby",
+      "city": "Tampa",
+      "price": 28
+    }
+  ]
+}

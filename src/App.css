@@ -1,0 +1,85 @@
+.app {
+  margin: 0 auto;
+  display: flex;
+  place-items: center;
+  max-width: 60%;
+}
+ 
+.spacer{
+  margin: 40px 0;
+}
+
+.events-page {
+  margin-bottom: 30px;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  /* grid-template-rows: 140px ; */
+  gap: 24px 10px;
+}
+
+.event-card {
+  background-color: #fff;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
+.event-card__text-content {
+  padding: 4px 16px 16px 16px;
+}
+
+.event-card__name {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.event-card__city {
+  display: flex;
+  place-items: center;
+}
+
+.event-card__city img {
+  width: 16px;  
+}
+
+.event-card__city p {
+  margin-left: 6px;
+  color: #d1410c;
+  font-weight: 500;
+  font-size: small;
+}
+
+.event-card__price span, .event-card__artiste span {
+  color: #888;
+}
+
+.event-card__price, .event-card__artiste {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: small;
+  color: #000;
+}
+
+ /* {
+  font-size: smaller;
+  font-weight: 500;
+} */
+
+.filters > * {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.filters input {
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.filters button {
+  /* background-color: #646cff; */
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
