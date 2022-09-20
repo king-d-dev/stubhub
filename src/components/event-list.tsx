@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import eventData from "../data/events.json";
 import { IEvent } from "../interfaces/event";
 import { Event } from "./event";
@@ -7,6 +7,7 @@ export const EventList = () => {
   const [cityName, setCityName] = useState("");
   const [price, setPrice] = useState<number | null>(null);
   const [events, setEvents] = useState(eventData.events);
+  const [showCheapest, setShowCheapest] = useState<boolean>(false);
 
   const filterByCityName = (event: IEvent) => {
     return !!cityName.trim()
@@ -17,8 +18,8 @@ export const EventList = () => {
   const filterByPrice = (event: IEvent) =>
     price ? event.price <= price : true;
 
-  const filterEvents = (e: React.FormEvent) => {
-    e.preventDefault();
+  const filterEvents = (e?: React.FormEvent) => {
+    e?.preventDefault();
     const hasCityNameInSearch = cityName.trim();
 
     if (!price && !hasCityNameInSearch) {
@@ -34,6 +35,35 @@ export const EventList = () => {
     console.log(filteredEvents);
     setEvents(filteredEvents);
   };
+
+  const filterByCheapest = () => {
+    let cheapest = events[0].price;
+
+    events.forEach((event) => {
+      if (event.price < cheapest) {
+        cheapest = event.price;
+      }
+    });
+
+    const cheapestEvents = events.filter((event) => event.price === cheapest);
+    setEvents(cheapestEvents);
+  };
+
+  const toggleCheapest = () => {
+    setShowCheapest(!showCheapest);
+  };
+
+  useEffect(() => {
+    filterEvents();
+  }, [cityName, price]);
+
+  useEffect(() => {
+    if (showCheapest) {
+      filterByCheapest();
+    } else {
+      setEvents(eventData.events);
+    }
+  }, [showCheapest]);
 
   return (
     <div className="event-list">
@@ -52,9 +82,19 @@ export const EventList = () => {
           type="number"
           placeholder="filter by prices greater or equal to"
         />
-        <button onSubmit={filterEvents} onClick={filterEvents}>
+        <div>
+          <input
+            checked={showCheapest}
+            onChange={toggleCheapest}
+            type="checkbox"
+            name="showOnlyCheapest"
+            id="showOnlyCheapest"
+          />
+          <label htmlFor="showOnlyCheapest">Show Cheapest</label>
+        </div>
+        {/* <button onSubmit={filterEvents} onClick={filterEvents}>
           Filter
-        </button>
+        </button> */}
       </form>
 
       <div className="spacer" />
